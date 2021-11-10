@@ -12,9 +12,11 @@ body {
   font-size: 1rem;
 }
 
+
 main {
   max-width: 900px;
-  margin: auto;
+  
+  margin:center;
   padding: 0.5rem;
   text-align: center;
 }
