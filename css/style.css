@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #c41212;
+  background: #e4dede;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
 }
@@ -18,7 +18,7 @@ main {
   text-align: center;
 }
 nav {
-  display: flex;
+  display: center;
   justify-content: space-between;
   align-items: center;
 }
