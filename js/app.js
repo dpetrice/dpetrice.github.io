@@ -9,43 +9,6 @@ if ("serviceWorker" in navigator) {
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err));
   });
-  /*
-  function getUserMedia(options, successCallback, failureCallback) {
-    var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia || navigator.msGetUserMedia;
-    if (api) {
-      return api.bind(navigator)(options, successCallback, failureCallback);
-    }
-  }
-  
-  var theStream;
-  
-  function getStream() {
-    if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
-      !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
-      alert('User Media API not supported.');
-      return;
-    }
-    
-    var constraints = {
-      video: true
-    };
-  
-    getUserMedia(constraints, function (stream) {
-      var mediaControl = document.querySelector('video');
-      if ('srcObject' in mediaControl) {
-        mediaControl.srcObject = stream;
-      } else if (navigator.mozGetUserMedia) {
-        mediaControl.mozSrcObject = stream;
-      } else {
-        mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
-      }
-      theStream = stream;
-    }, function (err) {
-      alert('Error: ' + err);
-    });
-  }
-  */
   function takePhoto() {
     if (!('ImageCapture' in window)) {
       alert('ImageCapture is not available');
@@ -68,6 +31,7 @@ if ("serviceWorker" in navigator) {
   }
 }
 
+
 function getUserMedia(options, successCallback, failureCallback) {
   var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -79,6 +43,25 @@ function getUserMedia(options, successCallback, failureCallback) {
 var theStream;
 var theRecorder;
 var recordedChunks = [];
+var target = document.getElementById('target');
+var watchId;
+
+function appendLocation(location, verb) {
+  verb = verb || 'updated';
+  var newLocation = document.createElement('p');
+  newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+  target.appendChild(newLocation);
+}
+
+if ('geolocation' in navigator) {
+  document.getElementById('askButton').addEventListener('click', function () {
+    navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation(location, 'fetched');
+    });
+    watchId = navigator.geolocation.watchPosition(appendLocation);
+  });
+} else {
+  target.innerText = 'Geolocation API not supported.';
 
 function getStream() {
   if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
@@ -120,6 +103,7 @@ function recorderOnDataAvailable(event) {
   recordedChunks.push(event.data);
 }
 
+
 function download() {
 
 bannerImage = document.getElementById('imageTag');
@@ -136,6 +120,8 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
+
+
 var base64 = getBase64Image(document.getElementById("imageTag"));
 }
-
+}
