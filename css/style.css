@@ -11,7 +11,18 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
 }
+.container {
+  perspective: 300;
+  -webkit-perspective: 300;
+}
 
+#imgLogo {
+  width: 275px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 15px;
+}
 
 main {
   max-width: 900px;
