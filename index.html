@@ -21,6 +21,16 @@
   <input type="file" id="asText">
   <textarea id="textbox" cols="50" rows="10"></textarea>
   <p><button id="save">Save!</button></p>
+ 
+ 
+  <p>Current permission status is <b id="status">unavailable</b>.</p>
+
+<p><button onclick="requestPermission()">Request permission</button></p>
+<p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
+<p><button onclick="persistentNotification()">Persistent notification</button></p>
+  
+  
+  
   <script>
     window.onload = function() {
     const asText = document.getElementById('asText');
