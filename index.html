@@ -8,7 +8,29 @@
     <title>DARIO PWA</title>
   </head>
   <body>
-
     <img src="tabelle.png" alt="Tabelle">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  
+    
+    <script type="text/javascript">
+    GenerateTable()
+    function insArray() {
+      var customersCache = JSON.parse(localStorage.getItem("testCustomers"));
+        var customers = new Array();
+        for (var i = 0; i < customersCache.length; i++) {
+        customers.push(customersCache[i]);
+        }
+        var desc = document.getElementById("desc").value;
+        var date = document.getElementById("date").value;
+        var category = document.getElementById("category").value;
+        var amount = document.getElementById("amount").value;
+        var balance = document.getElementById("balance").value;
+        customers.push([desc, date, category, amount, balance]);
+        localStorage.setItem("testCustomers", JSON.stringify(customers));
+        GenerateTable()
+    }
+  </script>
 </body>
+
 </html>
