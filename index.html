@@ -66,6 +66,18 @@
         dvTable.innerHTML = "";
         dvTable.appendChild(table);
     }
+    function erstelleTabelle(){
+      var customers = new Array();
+        customers.push(["Description", "Date", "Category", "Amount", "Balance"]);
+      
+        localStorage.setItem("testCustomers", JSON.stringify(customers));
+        
+    }
+  </script>
+  <script src="js/app.js">
+
+
+
   </script>
 </body>
 
