@@ -9,58 +9,6 @@
   </head>
   <body>
 
-<p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
-<p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
-<p>Estimated usage is <b id="percent">unknown</b>%.</p>
-<p>Persistent storage status is <b id="persisted">unknown</b>.</p>
 
-  <p>
-    <button onclick="readContacts()">Read Contacts</button>
-  </p>
-  <pre id="log"></pre>
-  <input type="file" id="asText">
-  <textarea id="textbox" cols="50" rows="10"></textarea>
-  <p><button id="save">Save!</button></p>
- 
- 
-  <p>Current permission status is <b id="status">unavailable</b>.</p>
-
-<p><button onclick="requestPermission()">Request permission</button></p>
-<p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
-<p><button onclick="persistentNotification()">Persistent notification</button></p>
-  
-  
-  
-  <script>
-    window.onload = function() {
-    const asText = document.getElementById('asText');
-    const textbox = document.getElementById('textbox');
-
-    asText.addEventListener('change', function(e) {
-        const file = asText.files[0];
-        const textType = /text.*/;
-
-        if (file.type.match(textType)) {
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                textbox.innerText = reader.result;
-            }
-
-            reader.readAsText(file);    
-        } else {
-            textbox.innerText = "Dateityp nicht unterstützt";
-        }
-    });
-  }
-  document.getElementById("save").addEventListener("click", function ()
-    {
-        var user = document.getElementById("textbox").value ;
-        localStorage.setItem("user", user) ;
-        console.log("Text is saved");
-        console.log(localStorage.getItem("user"));
-    } , false);
-  </script>
-<script src="js/app.js"></script>
 </body>
 </html>
