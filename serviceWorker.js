@@ -21,3 +21,27 @@ self.addEventListener("fetch", fetchEvent => {
     })
   );
 });
+
+self.addEventListener('activate', event => {
+  console.log("Service worker activated, deleting cache now");
+  // delete any caches that aren't in expectedCaches
+  // which will get rid of static-v1
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!expectedCaches.includes(key)) {
+          return caches.delete(key);
+        }
+      })
+    )).then(() => {
+      console.log('V2 now ready to handle fetches!');
+    })
+  );
+});
+
+
+
+self.addEventListener('message', function(event) {
+  event.ports[0].postMessage({'test': 'This is my response.'});
+});
+
