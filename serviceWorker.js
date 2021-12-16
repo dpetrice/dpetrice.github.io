@@ -2,9 +2,9 @@ const staticDevCoffee = "dev-coffee-site-v1";
 const assets = [
  "/",
  "/index.html",
- "/css/style.css",
- "/js/app.js",
-  "/tabelle.png"
+// "/css/style.css",
+// "/js/app.js",
+//  "/tabelle.png"
 ];
 
 self.addEventListener("install", installEvent => {
@@ -28,7 +28,7 @@ self.addEventListener("fetch", fetchEvent => {
 const expectedCaches = ["dev-coffee-site-v1"];
 
 self.addEventListener('install', event => {
-console.log('V1 installing…');
+console.log('V3 installing…');
 caches.delete("dev-coffee-site-v1");
 console.log("Old cache deleted");
 // cache a horse SVG into a new cache, static-v2
