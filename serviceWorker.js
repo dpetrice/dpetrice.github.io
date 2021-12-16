@@ -25,8 +25,6 @@ self.addEventListener("fetch", fetchEvent => {
 
 
 
-
-
 const expectedCaches = ["dev-coffee-site-v1"];
 
 self.addEventListener('install', event => {
