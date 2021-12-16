@@ -28,7 +28,7 @@ self.addEventListener("fetch", fetchEvent => {
 const expectedCaches = ["dev-coffee-site-v1"];
 
 self.addEventListener('install', event => {
-console.log('V1 installing…'+"Service worker version="+serviceworker_version);
+console.log('V2 installing…'+"Service worker version="+serviceworker_version);
 caches.delete("dev-coffee-site-v1");
 console.log("Old cache deleted");
 // cache a horse SVG into a new cache, static-v2
