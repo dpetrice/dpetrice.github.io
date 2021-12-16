@@ -7,6 +7,36 @@
     <link rel="manifest" href="manifest.json">
     <title>DARIO PWA</title>
   </head>
+  <form action="">
+    <input type="button" value="Add a Row" onclick="addRow()">
+    <!--<input type="button" value="Add a Column" onclick="addColumn()"> -->
+    <input type="button" value="Save to Cache" onclick="savetoCache()">
+    <input type="button" value="Load Cache" onclick="loadCache()">
+</form>
+<br>
+
+<table id="mytab" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <th>Description</th>
+    <th>Date</th>
+  <th>Category</th>
+  <th>Amount</th>
+  <th>Balance</th>
+  </tr>  
+  <tr>
+        <td><input type="text" name="enter1"></td>
+        <td><input type="text" name="enter2"></td>
+        <td><input type="text" name="enter1"></td>
+        <td><input type="text" name="enter2"></td>
+        <td><input type="text" name="enter2"></td>
+    </tr>
+
+</table>
+
+<br>
+<table id="testTabelle" border="1" cellspacing="0" cellpadding="0">
+
+</table>
   <body>
     <img src="tabelle.png" alt="Tabelle">
 
