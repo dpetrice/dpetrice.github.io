@@ -9,23 +9,6 @@
 </head>
 <body>
 
-<br>
-
- <table id="mytab"  cellspacing="0" cellpadding="0">
-
-</table> 
-<input class="sss1" type="text" name="desc" id="desc">
-<input class="sss1" type="text" name="date" id="date">
-<input class="sss1" type="text" name="category" id="category">
-<input class="sss1" type="text" name="amount" id="amount">
-<input class="sss1" type="text" name="balance" id="balance">
-<br>
-<input type="button" value="Hinzufügen" onclick="insArray()">
-<input type="button" value="Local Cache löschen" onclick="localStorageloeschen()">
-
-<br>
-<img src="tabelle.png" alt="Tabelle">
-
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 
@@ -91,17 +74,6 @@ erstelleTabelle()
       var dvTable = document.getElementById("mytab");
       dvTable.innerHTML = "";
       dvTable.appendChild(table);
-  }
-  function erstelleTabelle(){
-    var customers = new Array();
-      customers.push(["Description", "Date", "Category", "Amount", "Balance"]);
-      // customers.push([1, "John Hammond", "United States"]);
-      // customers.push([2, "Mudassar Khan", "India"]);
-      // customers.push([3, "Suzanne Mathews", "France"]);
-      // customers.push([4, "Robert Schidner", "Russia"]);
-
-      localStorage.setItem("testCustomers", JSON.stringify(customers));
-      
   }
 </script>
 <script src="js/app.js">
