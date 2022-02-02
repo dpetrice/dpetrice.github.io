@@ -44,7 +44,7 @@ function initMap(){
         imageIcon: "https://img.icons8.com/nolan/2x/marker.png", 
         content: `<h2>FRA UAS</h2>`},
 
-        {location:{lat: 39.4699, lng: -0.3763}},
+        {location:{lat: 50.152651, lng: 8.491664}},
 
         {location:{lat: 50.152651, lng: 8.491664},content: `<h2>Bad Soden</h2>` }
 
