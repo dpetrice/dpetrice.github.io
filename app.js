@@ -4,7 +4,7 @@ function initMap(){
 
     var options = {
         center: {lat: 50.130374 , lng:8.693118 },
-        zoom: 800
+        zoom: 8000
     }
 
     //New Map
