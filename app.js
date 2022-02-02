@@ -19,27 +19,6 @@ function initMap(){
 
 
 
-    //Marker
-/*
-    const marker = new google.maps.Marker({
-    position:{lat: 37.9922, lng: -1.1307},
-    map:map,
-    icon:"https://img.icons8.com/nolan/2x/marker.png"
-    });
-
-    //InfoWindow
-
-    const detailWindow = new google.maps.InfoWindow({
-        content: `<h2>Murcia City</h2>`
-    });
-
-    marker.addListener("mouseover", () =>{
-        detailWindow.open(map, marker);
-    })
-    */
-
-    //Add Markers to Array
-
     let MarkerArray = [ {location:{lat: 50.130374, lng: 8.693118}, 
         imageIcon: "https://img.icons8.com/nolan/2x/marker.png", 
         content: `<h2>FRA UAS</h2>`},
