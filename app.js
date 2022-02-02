@@ -40,13 +40,13 @@ function initMap(){
 
     //Add Markers to Array
 
-    let MarkerArray = [ {location:{lat: 37.9922, lng: -1.1307}, 
+    let MarkerArray = [ {location:{lat: 50.130374, lng: 8.693118}, 
         imageIcon: "https://img.icons8.com/nolan/2x/marker.png", 
-        content: `<h2>Murcia City</h2>`},
+        content: `<h2>FRA UAS</h2>`},
 
         {location:{lat: 39.4699, lng: -0.3763}},
 
-        {location:{lat: 38.5411, lng: -0.1225},content: `<h2>Benidorm City</h2>` }
+        {location:{lat: 50.152651, lng: 8.491664},content: `<h2>Bad Soden</h2>` }
 
 
 
